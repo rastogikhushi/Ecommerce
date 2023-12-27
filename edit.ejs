@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate') %>
+<%-include('../partials/flash')%>
+<!-- <% layout('layouts/boilerplate') %> -->
+
+
+<div class="row">
+    <div class="col-6 mx-auto">
+        <form action="/students/<%=foundStudent._id%>?_method=PATCH" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="naam" class="form-label">FAV-Subject: </label>
+                <input type="text" class="form-control" name="name" id="naam" placeholder="Name of favSubject" value="<%=foundStudent.favSubject%>" required>
+            </div>
+            <div class="mb-3">
+                <label for="paisa" class="form-label">Age: </label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Rs. </span>
+                    <input class="form-control" type="number" name="price" id="paisa" placeholder="Age" value="<%=foundStudent.age%>" required>
+                </div>
+            </div>
+        
+            <div class="mb-3">
+                <label for="des" class="form-label">College Year </label>
+                <textarea class="form-control"  name="desc" id="des" rows="5" placeholder="Description of Product and Unit" required><%=foundStudent.collegeYear%></textarea>
+                
+            </div>
+            <div class="mb-3">
+                <label for="des" class="form-label">Teacher NAME </label>
+                <textarea class="form-control"  name="desc" id="des" rows="5" placeholder="Description of Product and Unit" required><%=foundStudent.teacherName%></textarea>
+                
+            </div>
+            <button type="submit" class="btn btn-sm btn-success">Save Changes</button>
+        </form>
+    </div>
+</div>
